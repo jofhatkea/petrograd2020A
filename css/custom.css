@@ -10,20 +10,15 @@
   --font-headers: "Dosis", sans-serif;
 }
 
-/* RGB
-$color1: rgba(227, 228, 229, 1);
-$color2: rgba(18, 53, 91, 1);
-$color3: rgba(2, 4, 2, 1);
-$color4: rgba(83, 134, 228, 1);
-$color5: rgba(128, 161, 193, 1);
-*/
 * {
   box-sizing: border-box;
 }
+
 img {
   max-width: 100%;
   height: auto;
 }
+
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -117,11 +112,13 @@ nav a:hover {
   background: rgba(255, 255, 255, 1);
   box-shadow: 3px 3px 5px #000000ab;
 }
+
 .product p {
   color: var(--font-color-secondary);
   font-size: 1rem;
   line-height: 1.5rem;
 }
+
 .productbody {
   position: relative;
   display: flex;
@@ -138,6 +135,7 @@ nav a:hover {
   border: 0;
   padding: 8px;
   font-size: 1.3rem;
+  cursor: pointer;
 }
 
 footer {
