@@ -1,53 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
 
-    <title>Restaurant Petrograd</title>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Oswald&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dosis:wght@253;1300&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Custom CSS -->
-    <link href="css/custom.css" rel="stylesheet" />
-  </head>
+  <title>Restaurant Petrograd</title>
 
-  <body>
-    <!-- Navigation -->
-    <header id="header">
-      <img src="awesomelogo.png" alt="" />
-      <nav>
-        <a href="#">Petrograd</a>
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@253;1300&display=swap" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link href="css/custom.css" rel="stylesheet" />
+</head>
 
-        <a href="#starter">Starter</a>
-        <a href="#main">Main</a>
-      </nav>
-    </header>
+<body>
+  <!-- Navigation -->
+  <header id="header">
+    <img src="awesomelogo.png" alt="" />
+    <nav>
+      <a href="#">Petrograd</a>
 
-    <!-- Page Content -->
+      <a href="#starter">Starter</a>
+      <a href="#main">Main</a>
+    </nav>
+  </header>
 
-    <main class="productlist">
-      <section id="starter">
-        <h2>Starter</h2>
+  <!-- Page Content -->
+
+  <main class="productlist">
+    <section id="starter">
+      <h2>Starter</h2>
+      <template id="productTemplate">
         <article class="product">
-          <img
-            src="https://kea-alt-del.dk/t5/site/imgs/small/rodbede-cabanossi-sm.jpg"
-            alt=""
-          />
+          <img src="https://kea-alt-del.dk/t5/site/imgs/small/rodbede-cabanossi-sm.jpg" alt="" />
           <section class="productbody">
             <h3 class="data_name">Some really delisious dish</h3>
             <p>
@@ -58,61 +47,19 @@
             <button>See details</button>
           </section>
         </article>
-        <article class="product">
-          <img
-            src="https://kea-alt-del.dk/t5/site/imgs/small/rodbede-cabanossi-sm.jpg"
-            alt=""
-          />
-          <section class="productbody">
-            <h3 class="data_name">Some really delisious dish</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatum, velit inventore. Architecto nihil quis temporibus aut.
-            </p>
-            <h4 class="data_price">49,-</h4>
-            <button>See details</button>
-          </section>
-        </article>
-      </section>
-      <section id="main">
-        <h2>Main</h2>
-        <article class="product">
-          <img
-            src="https://kea-alt-del.dk/t5/site/imgs/small/rodbede-cabanossi-sm.jpg"
-            alt=""
-          />
-          <section class="productbody">
-            <h3 class="data_name">Some really delisious dish</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatum, velit inventore. Architecto nihil quis temporibus aut.
-            </p>
-            <h4 class="data_price">49,-</h4>
-            <button>See details</button>
-          </section>
-        </article>
-        <article class="product">
-          <img
-            src="https://kea-alt-del.dk/t5/site/imgs/small/rodbede-cabanossi-sm.jpg"
-            alt=""
-          />
-          <section class="productbody">
-            <h3 class="data_name">Some really delisious dish</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatum, velit inventore. Architecto nihil quis temporibus aut.
-            </p>
-            <h4 class="data_price">49,-</h4>
-            <button>See details</button>
-          </section>
-        </article>
-      </section>
-    </main>
+      </template>
+    </section>
+    <section id="main">
+      <h2>Main</h2>
 
-    <footer>
-      <p>Copyright &copy; Jonas</p>
-    </footer>
+    </section>
+  </main>
 
-    <script src="js/petrograd.js"></script>
-  </body>
+  <footer>
+    <p>Copyright &copy; Jonas</p>
+  </footer>
+
+  <script src="js/petrograd.js"></script>
+</body>
+
 </html>
