@@ -106,7 +106,6 @@ nav a:hover {
 }
 
 .product {
-  position: relative;
   display: flex;
   flex-direction: column;
   background: rgba(255, 255, 255, 1);
@@ -120,7 +119,6 @@ nav a:hover {
 }
 
 .productbody {
-  position: relative;
   display: flex;
   flex: auto;
   flex-direction: column;
