@@ -21,6 +21,21 @@ function showProduct(myProduct) {
   const temp = document.querySelector("#productTemplate").content;
   //clone the template
   const myCopy = temp.cloneNode(true);
+
+  if (!myProduct.discount) {
+    //console.log("NOT DISCOUNT")
+    myCopy.querySelector(".data_discount").classList.add("hidden")
+  }
+  if (myProduct.vegetarian) {
+    myCopy.querySelector(".vegetarian").classList.remove("hidden");
+  }
+  if (myProduct.soldout) {
+    const p = document.createElement("p");
+    p.textContent = "Sold Out";
+    p.classList.add("soldout")
+    myCopy.querySelector("article").appendChild(p)
+
+  }
   //fill out the template
   myCopy.querySelector(".data_name").textContent = myProduct.name;
   //append
@@ -28,7 +43,8 @@ function showProduct(myProduct) {
   parentElem.appendChild(myCopy)
 }
 
-
+const articles = document.querySelectorAll("article");
+console.log(articles)
 
 /*
 const name1 = "Jonas";

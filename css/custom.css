@@ -7,7 +7,7 @@
   --font-color-primary: #29484b;
   --font-color-secondary: hsl(0, 0%, 37%);
   --font-body: "Roboto", sans-serif;
-  --font-headers: "Dosis", sans-serif;
+  --font-headers: "Oswald", sans-serif;
 }
 
 * {
@@ -110,6 +110,7 @@ nav a:hover {
   flex-direction: column;
   background: rgba(255, 255, 255, 1);
   box-shadow: 3px 3px 5px #000000ab;
+  position: relative;
 }
 
 .product p {
@@ -147,4 +148,18 @@ footer {
 
 footer p {
   margin-left: 60px;
+}
+
+.hidden {
+  display: none;
+}
+
+.soldout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: hotpink;
+  width: 100%;
+  padding: .6rem;
+  margin: 0;
 }
