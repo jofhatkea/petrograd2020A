@@ -154,6 +154,11 @@ footer p {
   display: none;
 }
 
+button.active {
+  background: hotpink;
+  color: white;
+}
+
 .soldout {
   position: absolute;
   top: 0;

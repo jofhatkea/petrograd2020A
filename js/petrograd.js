@@ -36,6 +36,17 @@ function showProduct(myProduct) {
     myCopy.querySelector("article").appendChild(p)
 
   }
+
+  //1. find the article
+  const article = myCopy.querySelector("article");
+
+  //2. add classes
+  if (myProduct.vegetarian) {
+    article.classList.add("vegetarian")
+  }
+  if (myProduct.alcohol) {
+    article.classList.add("alcoholic")
+  }
   //fill out the template
   myCopy.querySelector(".data_name").textContent = myProduct.name;
   //append
@@ -43,16 +54,29 @@ function showProduct(myProduct) {
   parentElem.appendChild(myCopy)
 }
 
-const articles = document.querySelectorAll("article");
-console.log(articles)
 
-/*
-const name1 = "Jonas";
+const veggiefilter = document.querySelector("#veggiefilter");
+veggiefilter.addEventListener("click", veggieFilterClicked);
 
-function hi() {
-  const name2 = "Lasse";
-  console.log(name1, name2)
+function veggieFilterClicked() {
+  veggiefilter.classList.toggle("active")
+  //b select all non veggie
+  const articles = document.querySelectorAll("article:not(.vegetarian)");
+  //console.log(articles)
+  articles.forEach(elem => {
+    elem.classList.toggle("hidden")
+  })
 }
 
-console.log(name1, name2)
-*/
+const alcoholfilter = document.querySelector("#alcoholfilter");
+alcoholfilter.addEventListener("click", alcoholFilterClicked);
+
+function alcoholFilterClicked() {
+  alcoholfilter.classList.toggle("active")
+  //b select all non veggie
+  const articles = document.querySelectorAll("article.alcoholic");
+  //console.log(articles)
+  articles.forEach(elem => {
+    elem.classList.toggle("hidden")
+  })
+}
