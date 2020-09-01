@@ -36,7 +36,7 @@
 
     <template id="productTemplate">
       <article class="product">
-        <img src="https://kea-alt-del.dk/t5/site/imgs/small/rodbede-cabanossi-sm.jpg" alt="" />
+        <img class="product_image" src="https://kea-alt-del.dk/t5/site/imgs/small/rodbede-cabanossi-sm.jpg" alt="" />
         <div class="icons">
           <img class="vegetarian hidden" src="gfx/vegetarian.png">
         </div>
@@ -59,6 +59,15 @@
   <footer>
     <p>Copyright &copy; Jonas</p>
   </footer>
+
+  <div class="modal-background hide">
+    <div class="modal-content">
+      <h3 class="modal-name">NAME</h3>
+      <img src="" alt="" class="modal-image" />
+      <p class="modal-description">LONG DESCRIPTION</p>
+      <h4 class="modal-price">PRICE</h4>
+    </div>
+  </div>
 
   <script src="js/petrograd.js"></script>
 </body>

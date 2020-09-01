@@ -57,12 +57,14 @@ function dataReceived(products) {
 
 //executed once for each product
 function showProduct(myProduct) {
-  //console.log(myProduct)
+  console.log(myProduct)
   //finding the template
   const temp = document.querySelector("#productTemplate").content;
   //clone the template
   const myCopy = temp.cloneNode(true);
 
+  const img = myCopy.querySelector(".product_image");
+  img.setAttribute("src", `https://kea-alt-del.dk/t5/site/imgs/medium/${myProduct.image}-md.jpg`)
   if (!myProduct.discount) {
     //console.log("NOT DISCOUNT")
     myCopy.querySelector(".data_discount").classList.add("hidden")
@@ -90,13 +92,28 @@ function showProduct(myProduct) {
   }
   //fill out the template
   myCopy.querySelector(".data_name").textContent = myProduct.name;
-  console.log("I am a ", myProduct.category, "I should go to section#" + myProduct.category)
 
+
+
+  myCopy.querySelector("button").addEventListener("click", () => {
+    fetch(`https://kea-alt-del.dk/t5/api/product?id=` + myProduct.id)
+      .then(res => res.json())
+      .then(showDetails);
+  });
   //append
   const parentElem = document.querySelector("section#" + myProduct.category);
   parentElem.appendChild(myCopy)
 }
 
+const modal = document.querySelector(".modal-background");
+//once we have our data, ....
+function showDetails(data) {
+  console.log(data)
+  modal.querySelector(".modal-name").textContent = data.name;
+  modal.querySelector(".modal-description").textContent = data.longdescription;
+  //  //...
+  modal.classList.remove("hide");
+}
 
 const veggiefilter = document.querySelector("#veggiefilter");
 veggiefilter.addEventListener("click", veggieFilterClicked);
@@ -123,3 +140,11 @@ function alcoholFilterClicked() {
     elem.classList.toggle("hidden")
   })
 }
+
+
+
+//close the modal when clicked
+
+modal.addEventListener("click", () => {
+  modal.classList.add("hide");
+});
