@@ -10,6 +10,7 @@ init();
 function categoriesRecieved(cats) {
   createNavigation(cats);
   createSections(cats);
+  fetchProducts();
 }
 
 function createSections(categories) {
@@ -34,19 +35,20 @@ function createNavigation(categories) {
     a.setAttribute("href", `#${cat}`)
     document.querySelector("nav").appendChild(a);
   })
-
 }
-/*
-// fetch data
-fetch("https://kea-alt-del.dk/t5/api/productlist")
-  .then(function (response) {
-    console.log(response)
-    return response.json();
-  })
-  .then(function (data) {
 
-    dataReceived(data);
-  })
+function fetchProducts() {
+  // fetch data
+  fetch("https://kea-alt-del.dk/t5/api/productlist")
+    .then(function (response) {
+      console.log(response)
+      return response.json();
+    })
+    .then(function (data) {
+
+      dataReceived(data);
+    })
+}
 
 function dataReceived(products) {
   //loop through products
@@ -55,7 +57,7 @@ function dataReceived(products) {
 
 //executed once for each product
 function showProduct(myProduct) {
-  console.log(myProduct)
+  //console.log(myProduct)
   //finding the template
   const temp = document.querySelector("#productTemplate").content;
   //clone the template
@@ -88,8 +90,10 @@ function showProduct(myProduct) {
   }
   //fill out the template
   myCopy.querySelector(".data_name").textContent = myProduct.name;
+  console.log("I am a ", myProduct.category, "I should go to section#" + myProduct.category)
+
   //append
-  const parentElem = document.querySelector("section#starter");
+  const parentElem = document.querySelector("section#" + myProduct.category);
   parentElem.appendChild(myCopy)
 }
 
@@ -119,4 +123,3 @@ function alcoholFilterClicked() {
     elem.classList.toggle("hidden")
   })
 }
-*/
