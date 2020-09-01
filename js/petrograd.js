@@ -1,3 +1,42 @@
+function init() {
+  fetch("https://kea-alt-del.dk/t5/api/categories").then(r => r.json()).then(
+    function (data) {
+      categoriesRecieved(data)
+    }
+  )
+}
+init();
+
+function categoriesRecieved(cats) {
+  createNavigation(cats);
+  createSections(cats);
+}
+
+function createSections(categories) {
+  //<section id="starter">
+  //<h2>Starter</h2>
+  categories.forEach(category => {
+    const section = document.createElement("section");
+    section.setAttribute("id", category);
+    const h2 = document.createElement("h2");
+    h2.textContent = category;
+    section.appendChild(h2);
+    document.querySelector(".productlist").appendChild(section);
+
+  })
+}
+
+function createNavigation(categories) {
+  categories.forEach(cat => {
+    console.log(cat)
+    const a = document.createElement("a");
+    a.textContent = cat;
+    a.setAttribute("href", `#${cat}`)
+    document.querySelector("nav").appendChild(a);
+  })
+
+}
+/*
 // fetch data
 fetch("https://kea-alt-del.dk/t5/api/productlist")
   .then(function (response) {
@@ -80,3 +119,4 @@ function alcoholFilterClicked() {
     elem.classList.toggle("hidden")
   })
 }
+*/
